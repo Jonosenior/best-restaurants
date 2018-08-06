@@ -1,24 +1,14 @@
-# README
+# Best Restaurants
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This (ongoing) webapp stores a list of the user's favourite restaurants, along with recommended dishes and address information pulled from the GoogleMaps API.
 
-Things you may want to cover:
+## Checklist / How-To
 
-* Ruby version
+- Create two models - restaurants and dishes - along with the relevant attributes for each.
 
-* System dependencies
+- Create a has_many / belongs_to association between them by a) editing each model file, and b) editing the DB Migration file for dishes to include this line:
+```
+t.belongs_to :restaurant, index: true
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Then run the DB migration. Add any validations to the models, and write basic tests for the validations.

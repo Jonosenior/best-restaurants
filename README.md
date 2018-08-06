@@ -12,3 +12,14 @@ t.belongs_to :restaurant, index: true
 ```
 
 - Then run the DB migration. Add any validations to the models, and write basic tests for the validations.
+
+
+## Problems and Solutions
+
+- Issue: How to test for associations?
+  Solution: The Shoulda gem makes this easy. Add it to the Gemfile, then you can write:
+  ```
+  should have_many(:dishes)
+  ```
+
+- 

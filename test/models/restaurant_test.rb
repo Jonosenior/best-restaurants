@@ -31,8 +31,8 @@ class RestaurantTest < ActiveSupport::TestCase
     assert_not @restaurant.valid?
   end
 
-
-
-
+  context "associations" do
+    should have_many(:dishes)
+  end
 
 end

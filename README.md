@@ -6,7 +6,7 @@ This (ongoing) webapp stores a list of the user's favourite restaurants, along w
 
 - Create two models - restaurants and dishes - along with the relevant attributes for each.
 
-- Create a has_many / belongs_to association between them by a) editing each model file, and b) editing the DB Migration file for dishes to include this line:
+- Create a has_many / belongs_to association between them by a) editing each model file, and b) editing the DB migration file for the dish model to include this line:
 ```
 t.belongs_to :restaurant, index: true
 ```

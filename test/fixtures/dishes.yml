@@ -3,6 +3,8 @@
 tofu:
   name: Tofu Leaf Salad
   description: Sweet, sour and hot - you haven't tasted anything like this before.
+  restaurant: dajiale
+
 
 two:
   name: MyString

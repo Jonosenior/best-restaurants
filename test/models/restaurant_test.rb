@@ -4,7 +4,6 @@ class RestaurantTest < ActiveSupport::TestCase
 
   def setup
     @restaurant = restaurants(:dajiale)
-    @dish = dishes(:tofu)
   end
 
   test "should be valid" do

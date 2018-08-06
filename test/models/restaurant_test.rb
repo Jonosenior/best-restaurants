@@ -3,6 +3,7 @@ require 'test_helper'
 class RestaurantTest < ActiveSupport::TestCase
 
   def setup
+    @dish = dishes(:tofu)
     @restaurant = restaurants(:dajiale)
   end
 
@@ -28,6 +29,10 @@ class RestaurantTest < ActiveSupport::TestCase
   test "cuisine should be present" do
     @restaurant.cuisine = "   "
     assert_not @restaurant.valid?
+  end
+
+  test "dishes should be present" do
+    assert @restaurant.dishes.include? @dish
   end
 
   context "associations" do

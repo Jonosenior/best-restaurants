@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
+tofu:
+  name: Tofu Leaf Salad
+  description: Sweet, sour and hot - you haven't tasted anything like this before.
 
 two:
   name: MyString

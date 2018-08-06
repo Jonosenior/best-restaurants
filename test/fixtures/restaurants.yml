@@ -1,10 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  address: MyString
-  cuisine: MyString
-  description: MyText
+dajiale:
+  name: Da Jia Le
+  address: Goebenstraße 23, 10783 Berlin
+  cuisine: Chinese
+  description: Probably the best Chinese restaurant in Berlin. They specialise in authentic Northeastern Chinese cuisine, with a sideline in craft beer. Try the aubergine.
 
 two:
   name: MyString

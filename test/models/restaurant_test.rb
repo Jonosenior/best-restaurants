@@ -1,7 +1,38 @@
 require 'test_helper'
 
 class RestaurantTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  def setup
+    @restaurant = restaurants(:dajiale)
+    @dish = dishes(:tofu)
+  end
+
+  test "should be valid" do
+    assert @restaurant.valid?
+  end
+
+  test "name should be present" do
+    @restaurant.name = "   "
+    assert_not @restaurant.valid?
+  end
+
+  test "description should be present" do
+    @restaurant.description = "   "
+    assert_not @restaurant.valid?
+  end
+
+  test "address should be present" do
+    @restaurant.address = "   "
+    assert_not @restaurant.valid?
+  end
+
+  test "cuisine should be present" do
+    @restaurant.cuisine = "   "
+    assert_not @restaurant.valid?
+  end
+
+
+
+
+
 end

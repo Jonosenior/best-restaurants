@@ -1,0 +1,21 @@
+<%= form_for(@restaurant) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <!-- , class: "form-control input-sm chat-input"%><br> -->
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <!-- , class: "form-control input-sm chat-input"%><br> -->
+
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
+  <!-- , class: "form-control input-sm chat-input" %><br> -->
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <!-- , class: "form-control input-lg chat-input"%><br> -->
+
+  <%= f.submit "Submit" %>
+  <!-- , class: "btn btn-primary btn-md" %> -->
+
+<% end %>

@@ -3,6 +3,7 @@ require 'test_helper'
 class RestaurantsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @dajiale = restaurants(:dajiale)
+    @tofu = dishes(:tofu)
     @restaurants = Restaurant.all
   end
 
@@ -32,19 +33,5 @@ class RestaurantsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
-
-  # test "should create restaurant" do
-  #   # get new_restaurant_path
-  #   assert_difference('Restaurant.count') do
-  #     # post new_restaurant_path(id: 152349817)
-  #     post restaurant_path, name: "Da Jia Le",
-  #                      address: "new@new.new",
-  #                      cuisine: "first",
-  #                      description: "last",
-  #                      id: 2
-  #   end
-  #   assert_redirected_to restaurant_path(@dajiale)
-  # end
-
 
 end

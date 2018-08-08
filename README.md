@@ -64,3 +64,29 @@ end
     cuisine: Chinese
     description: Probably the best [...]
   ```
+
+  - UNRESOLVED ISSUE: I want add a test on my controller that a restaurant's show page contains the names of its dishes. My current code doesn't work (though the website itself does display this functionality):
+
+  ```
+  test "show restaurant should contain dishes" do
+    # @dajiale.dishes.each { |a| puts a.name }
+    get restaurants_path(@dajiale.id)
+    assert_select "p", { html: /#{@dajiale.dishes.first.name}/ }, "A restaurant's dishes should appear on its show page"
+  end
+  ```
+  - UNRESOLVED ISSUE: I want to add a test on my controller that the restaurant#create action actually creates a restaurant. My current code doesn't work:
+
+  ```
+  # test "should create restaurant" do
+  #   # get new_restaurant_path
+  #   assert_difference('Restaurant.count') do
+  #     # post new_restaurant_path(id: 152349817)
+  #     post restaurant_path, name: "Da Jia Le",
+  #                      address: "new@new.new",
+  #                      cuisine: "first",
+  #                      description: "last",
+  #                      id: 2
+  #   end
+  #   assert_redirected_to restaurant_path(@dajiale)
+  # end
+  ```

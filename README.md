@@ -42,13 +42,23 @@ def create
 end
 ```
 
+- Since dishes always belong to a restaurant, it makes sense to list them in a restaurant's view. We can do this by adding the following code to the restaurant#show action in the controller:
+
+```
+@dishes = @restaurant.dishes
+```
+
+Then we can iterate over @dishes in the view.
+
+- 
+
 ## Problems and Solutions
 
-  - Issue: How to test for associations?
-    Solution: The Shoulda gem makes this easy. Add it to the Gemfile, then you can write:
-    ```
-    should have_many(:dishes)
-    ```
+- Issue: How to test for associations?
+  Solution: The Shoulda gem makes this easy. Add it to the Gemfile, then you can write:
+  ```
+  should have_many(:dishes)
+  ```
 
   - Issue: How exactly do you set up your fixtures? How do you make an association between two fixtures?
   Solution: For reference, this is how my 2 fixtures look (the first is located in the dish fixtures file, the second in the restaurants fixtures file). Importantly, the Dish fixture references the Restaurant fixture simply by name. Rails knows there is an association there, so you don't need to mess around manually finding the object_id of the fixture you're trying to link to. Link to it by the name of the fixture.
@@ -64,6 +74,8 @@ end
     cuisine: Chinese
     description: Probably the best [...]
   ```
+
+  - Issue: The list of dishes belonging to a restaurant wasn't appearing on that restaurant's view. The problem was that I had used '<% %>' to embed the Ruby, rather than '<%= %>'. Stupid mistake!
 
   - UNRESOLVED ISSUE: I want add a test on my controller that a restaurant's show page contains the names of its dishes. My current code doesn't work (though the website itself does display this functionality):
 

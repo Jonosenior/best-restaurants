@@ -7,3 +7,8 @@
   <p> <%= a.name %> </p>
   <p> <%= a.description %> </p>
 <% end %>
+
+<iframe width="300" height="300" frameborder="0" style="border:0"
+ src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDnqFw6YprUwNgAsLDIh8g3Pt_xkhk99zI&q=<%=@restaurant.address.gsub(" ","")%>"
+>
+</iframe>

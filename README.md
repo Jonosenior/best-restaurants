@@ -2,6 +2,16 @@
 
 This (ongoing) webapp stores a list of the user's favourite restaurants, along with recommended dishes and address information pulled from the GoogleMaps API.
 
+## Features
+
+The following features will all be covered by tests:
+
+- User gets a list of restaurants with name, address, and cuisine type.
+- User sees a google maps view and can see restaurant details by clicking on the markers.
+- User gets a list of the dishes when opening the page of a restaurant.
+- User can insert new restaurants.
+- User can insert new dishes.
+
 ## Checklist / How-To
 
 - Create two models - restaurants and dishes - along with the relevant attributes for each.
@@ -50,7 +60,7 @@ end
 
 Then we can iterate over @dishes in the view.
 
-- 
+-
 
 ## Problems and Solutions
 

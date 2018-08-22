@@ -12,6 +12,7 @@
   <div class="container">
     <h2 class="text-center text-uppercase text-secondary mb-0">The Restaurants</h2>
     <hr class="star-dark mb-5">
+    <div id="map"></div>
     <div class="col-lg-5 col-lg-offset-3">
       <% @restaurants.each do |restaurant| %>
         <div class="row">
@@ -21,15 +22,15 @@
           <p><%= restaurant.address %> </p>
         </div>
       <% end %>
-      <div id="map"></div>
     </div>
   </div>
 </section>
+
 <script>
 
 function initMap() {
 
-  var locations = <%= raw @locations_pins %>;
+  var locations = <%= raw @restaurant_pins %>;
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 7,
@@ -41,7 +42,7 @@ function initMap() {
 
   for (count = 0; count < locations.length; count++) {
     new google.maps.Marker({
-      position: new google.maps.LatLng(locations[count][1], 	locations[count][2]),
+      position: new google.maps.LatLng(locations[count][1], locations[count][2]),
       map: map,
       title: locations[count][0]
       });

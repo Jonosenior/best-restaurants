@@ -1,21 +1,22 @@
-<%= form_for(@restaurant) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <!-- , class: "form-control input-sm chat-input"%><br> -->
+<% provide(:title, "New Restaurant") %>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <!-- , class: "form-control input-sm chat-input"%><br> -->
 
-  <%= f.label :cuisine %>
-  <%= f.text_field :cuisine %>
-  <!-- , class: "form-control input-sm chat-input" %><br> -->
+<div class="container" id="form_container">
+  <div class="row">
+      <div class="col-md-offset-4 col-md-4">
+        <h1>New Restaurant</h1><br>
+          <%= form_for(@restaurant) do |f| %>
+            <%= f.text_field :name, placeholder: "Name", class: "form-control input-sm chat-input"%><br>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <!-- , class: "form-control input-lg chat-input"%><br> -->
+            <%= f.text_field :address, placeholder: "Address", class: "form-control input-sm chat-input"%><br>
 
-  <%= f.submit "Submit" %>
-  <!-- , class: "btn btn-primary btn-md" %> -->
+            <%= f.text_field :cuisine, placeholder: "Cuisine", class: "form-control input-sm chat-input" %><br>
 
-<% end %>
+            <%= f.text_area :description, placeholder: "Description", class: "form-control input-lg chat-input"%><br>
+
+            <%= f.submit "Submit", class: "btn btn-primary btn-md" %>
+
+          <% end %>
+      </div>
+    </div>
+</div>

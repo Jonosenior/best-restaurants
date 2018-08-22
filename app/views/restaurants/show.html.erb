@@ -1,14 +1,20 @@
-<h1><%= @restaurant.name %></h1>
-<p><%= @restaurant.cuisine %> </p>
-<p><%= @restaurant.description %> </p>
-<p><%= @restaurant.address %> </p>
 
-<% @dishes.each do |a| %>
-  <p> <%= a.name %> </p>
-  <p> <%= a.description %> </p>
-<% end %>
+<div class="container", id="form_container">
+  <div class="col-lg-5 col-lg-offset-3">
 
-<iframe width="300" height="300" frameborder="0" style="border:0"
- src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_API_KEY"]%>&q=<%=@restaurant.address.gsub(" ","")%>"
->
-</iframe>
+    <h1><%= @restaurant.name %></h1>
+    <p><%= @restaurant.cuisine %> </p>
+    <p><%= @restaurant.description %> </p>
+    <p><%= @restaurant.address %> </p>
+
+    <% @dishes.each do |a| %>
+      <p> <%= a.name %> </p>
+      <p> <%= a.description %> </p>
+    <% end %>
+
+    <iframe width="300" height="300" frameborder="0" style="border:0"
+     src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_API_KEY"]%>&q=<%=@restaurant.address.gsub(" ","")%>"
+    >
+    </iframe>
+  </div>
+</div>

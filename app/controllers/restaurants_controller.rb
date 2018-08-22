@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
-    @restaurant_pins = @restaurants.map { |r| [r.address, r.latitude, r.longitude] }
+    @restaurant_pins = @restaurants.map { |r| [r.name, r.address, r.latitude, r.longitude] }
   end
 
   def new

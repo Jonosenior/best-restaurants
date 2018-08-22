@@ -1,8 +1,26 @@
-<% @restaurants.each do |restaurant| %>
-  <div class="row">
-    <h3><%= restaurant.name %> </h3>
-    <p><%= restaurant.cuisine %> </p>
-    <p><%= restaurant.description %> </p>
-    <p><%= restaurant.address %> </p>
+
+<header class="masthead bg-primary text-white text-center">
+  <div class="container">
+    <%= image_tag("dumplings.jpg", :class => "img-circle img-fluid mb-5 d-block mx-auto", width: '200px') %>
+    <h1 class="text-uppercase mb-0">Best Restaurants</h1>
+    <hr class="star-light">
+    <h2 class="font-weight-light mb-0">All the best eats</h2>
   </div>
-<% end %>
+</header>
+
+<section class="portfolio" id="gossip">
+  <div class="container">
+    <h2 class="text-center text-uppercase text-secondary mb-0">The Restaurants</h2>
+    <hr class="star-dark mb-5">
+    <div class="col-lg-5 col-lg-offset-3">
+      <% @restaurants.each do |restaurant| %>
+        <div class="row">
+          <h3><%= restaurant.name %> </h3>
+          <p><%= restaurant.cuisine %> </p>
+          <p><%= restaurant.description %> </p>
+          <p><%= restaurant.address %> </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

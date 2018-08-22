@@ -112,3 +112,9 @@ Then we can iterate over @dishes in the view.
   #   assert_redirected_to restaurant_path(@dajiale)
   # end
   ```
+
+  - Issue: How do I transform a Ruby array into a Javascript array? To display a map showing all restaurants in the db as pins, I need to pass the data from my Ruby db into a JS method. 
+  Solution:
+  ```
+  var locations = <%= raw @locations %>;
+  ```

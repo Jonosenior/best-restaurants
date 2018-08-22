@@ -24,6 +24,7 @@ group :test do
 end
 
 gem 'pry', '~> 0.10.3'
+gem 'figaro'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

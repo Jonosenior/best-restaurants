@@ -25,7 +25,7 @@ class RestaurantsController < ApplicationController
 
   def destroy
     Restaurant.find(params[:id]).destroy
-    flash[:success] = "Event deleted."
+    flash[:success] = "Restaurant deleted."
     redirect_to root_path
   end
 

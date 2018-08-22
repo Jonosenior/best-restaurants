@@ -21,6 +21,33 @@
           <p><%= restaurant.address %> </p>
         </div>
       <% end %>
+      <div id="map"></div>
     </div>
   </div>
 </section>
+<script>
+
+function initMap() {
+
+  var locations = <%= raw @locations_pins %>;
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    center: new google.maps.LatLng(52.533803, 13.398157),
+  });
+
+  var count;
+
+
+  for (count = 0; count < locations.length; count++) {
+    new google.maps.Marker({
+      position: new google.maps.LatLng(locations[count][1], 	locations[count][2]),
+      map: map,
+      title: locations[count][0]
+      });
+   }
+
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_API_KEY"]%>&callback=initMap">
+</script>

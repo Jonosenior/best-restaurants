@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20180806132508) do
     t.string "address"
     t.string "cuisine"
     t.text "description"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

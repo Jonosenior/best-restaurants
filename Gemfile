@@ -26,6 +26,7 @@ end
 gem 'pry', '~> 0.10.3'
 gem 'figaro'
 gem 'bootstrap-sass'
+gem 'geocoder'
 
 
 # Use CoffeeScript for .coffee assets and views

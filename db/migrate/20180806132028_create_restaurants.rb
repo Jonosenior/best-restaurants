@@ -5,6 +5,8 @@ class CreateRestaurants < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :cuisine
       t.text :description
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end

@@ -24,6 +24,19 @@ class RestaurantsController < ApplicationController
     @dishes = @restaurant.dishes
   end
 
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+  end
+
+  def update
+    if @restaurant.update(restaurant_params)
+      flash[:success] = "Restaurant updated!"
+    else
+      flash.now[:danger] = "Invalid information."
+      render edit
+    end
+  end
+
   def destroy
     Restaurant.find(params[:id]).destroy
     flash[:success] = "Restaurant deleted."

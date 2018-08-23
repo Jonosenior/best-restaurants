@@ -12,9 +12,15 @@
       <p> <%= a.description %> </p>
     <% end %>
 
-    <iframe width="300" height="300" frameborder="0" style="border:0"
-     src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_API_KEY"]%>&q=<%=@restaurant.address.gsub(" ","")%>"
-    >
-    </iframe>
+    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+    <%= link_to 'Back', root_path %> |
+    <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete %> 
+
+    <div class="container" id="map-container">
+      <iframe width="300" height="300" frameborder="0" style="border:0"
+       src="https://www.google.com/maps/embed/v1/place?key=<%=ENV["GOOGLE_API_KEY"]%>&q=<%=@restaurant.address.gsub(" ","")%>"
+      >
+      </iframe>
+    </div>
   </div>
 </div>

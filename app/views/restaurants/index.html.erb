@@ -27,6 +27,11 @@
           <p><%= restaurant.address %> </p>
           <p><%= restaurant.cuisine %> </p>
           <p><%= restaurant.description %> </p>
+          <u>Top Dishes:</u>
+          <ul> <% restaurant.dishes.each do |a| %>
+            <li><b><%= a.name %>: </b> <%= a.description %> </li>
+          </ul>
+          <% end %>
         </div>
       <% end %>
     </div>

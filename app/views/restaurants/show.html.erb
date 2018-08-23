@@ -3,18 +3,18 @@
   <div class="col-lg-5 col-lg-offset-3">
 
     <h1><%= @restaurant.name %></h1>
+    <p><%= @restaurant.address %> </p>
     <p><%= @restaurant.cuisine %> </p>
     <p><%= @restaurant.description %> </p>
-    <p><%= @restaurant.address %> </p>
-
-    <% @dishes.each do |a| %>
-      <p> <%= a.name %> </p>
-      <p> <%= a.description %> </p>
+    <u>Notable Dishes</u>
+    <ul> <% @dishes.each do |a| %>
+      <li><b><%= a.name %>: </b> <%= a.description %> </li>
+    </ul>
     <% end %>
 
     <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
     <%= link_to 'Back', root_path %> |
-    <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete %> 
+    <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete %>
 
     <div class="container" id="map-container">
       <iframe width="300" height="300" frameborder="0" style="border:0"
